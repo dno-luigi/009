@@ -8,7 +8,7 @@
       justify-content: center;
       align-items: flex-start;
       min-height: 100vh;
-      background-color: #ffffff; /* Light background in light mode */
+      background-color: #ffffff;
       color: #333333; /* Dark text in light mode */
       transition: background-color 0.3s ease, color 0.3s ease;
     }
@@ -21,7 +21,7 @@
       flex-direction: column;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      background-color: #ffffff; /* Light background in light mode */
+      background-color: #ffffff;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
@@ -58,7 +58,7 @@
       flex: 1;
       padding: 1rem;
       overflow-y: auto;
-      background-color: #f4f4f4; /* Light background in light mode */
+      background-color: #f4f4f4;
       transition: background-color 0.3s ease;
       color: #333333; /* Dark text in light mode */
     }
@@ -76,11 +76,11 @@
       word-wrap: break-word;
       overflow-wrap: break-word;
       position: relative;
-      max-height: none; /* Allow full height */
+      max-height: none;
       overflow: hidden;
       text-overflow: ellipsis;
       transition: max-height 0.3s ease;
-      background-color: transparent; /* Transparent background for messages */
+      background-color: transparent;
       border-radius: 10px;
       font-size: 1rem;
       line-height: 1.4;
@@ -93,14 +93,14 @@
 
     .ai-message {
       align-self: flex-start;
-      color: #333333; /* Match user text color in light mode */
+      color: #333333; /* Dark text in light mode */
     }
 
     .footer {
       padding: 1rem;
       display: flex;
       align-items: center;
-      background-color: #ffffff; /* Light background in light mode */
+      background-color: #ffffff;
       position: sticky;
       bottom: 0;
       transition: background-color 0.3s ease;
@@ -111,7 +111,7 @@
       padding: 0.8rem 3rem 0.8rem 1.2rem;
       border: none;
       border-bottom: 1px solid #ccc;
-      background-color: transparent; /* Transparent input background in light mode */
+      background-color: transparent;
       color: #333333; /* Dark text in light mode */
       font-size: 1rem;
       transition: border-color 0.3s ease;
@@ -121,7 +121,7 @@
 
     .message-input::placeholder {
       color: #666666; /* Dark placeholder in light mode */
-      content: '...as you wish'; /* Placeholder text */
+      content: '...as you wish';
     }
 
     .message-input:focus {
@@ -152,7 +152,7 @@
       right: 0;
       width: 300px;
       height: 100%;
-      background-color: #f4f4f4; /* Light background in light mode */
+      background-color: #f4f4f4;
       padding: 1rem;
       transform: translateX(100%);
       transition: transform 0.3s ease-in-out;
@@ -172,16 +172,16 @@
 
     .dark-mode .container {
       background-color: #000000; /* Black background in dark mode */
-      color: #f7fafc; /* Light text in dark mode */
+      color: #ffffff; /* Whiter text in dark mode */
     }
 
     .dark-mode .main {
       background-color: #000000; /* Black background for main display in dark mode */
-      color: #f7fafc; /* Light text in dark mode */
+      color: #ffffff; /* Whiter text in dark mode */
     }
 
     .dark-mode .header-icons button {
-      color: #f7fafc; /* Light text in dark mode */
+      color: #ffffff; /* Whiter text in dark mode */
     }
 
     .dark-mode .header-icons button:hover {
@@ -284,52 +284,24 @@
       color: #f7fafc; /* Light text */
     }
 
-    /* Tooltip styles */
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 120px;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #fff;
+    .thinking-indicator {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      color: #666;
+      font-style: italic;
       text-align: center;
-      border-radius: 5px;
-      padding: 5px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%; /* Position above the text */
-      left: 50%;
-      margin-left: -60px;
-      opacity: 0;
-      transition: opacity 0.3s;
+      animation: pulse 1.5s infinite;
     }
 
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    /* Button container styles */
-    .button-container {
-      background-color: #4a4a4a; /* Dark grey background */
-      padding: 5px;
-      border-radius: 5px;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .dark-mode .button-container {
-      background-color: #333333; /* Darker grey for dark mode */
-    }
-
-    .dark-mode .button-container i {
-      color: #ffffff; /* White icons in dark mode */
-    }
-
-    .light-mode .button-container i {
-      color: #000000; /* Black icons in light mode */
+    @keyframes pulse {
+      0% {
+        opacity: 0.7;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.7;
+      }
     }
